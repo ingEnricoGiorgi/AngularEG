@@ -9,7 +9,7 @@ import { Product } from '../models/product.model';
 export class ProductComponent implements OnInit {
   product: Product[] = [];
   constructor() { }
-
+//nginit
   ngOnInit(): void {
     this.product = [
       new Product("john",  5000, 1),
