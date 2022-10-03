@@ -7,12 +7,14 @@ import { TicketComponent } from './ticket/ticket.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TicketReadComponent } from './ticket-read/ticket-read.component';
 import { RouterModule } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
    AppComponent,
-    TicketComponent,
-   TicketReadComponent
+   TicketComponent,
+   TicketReadComponent,
+   ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: 'ticket/ticket', component: TicketComponent},
-      {path: 'ticket/ticket-read', component: TicketReadComponent},
+      {path: 'ticket-read/ticket-read', component: TicketReadComponent},
+      {path: 'product/product', component: ProductComponent},
      // {path: '', redirectTo: 'app', pathMatch: 'full'},
     ]),
   ],

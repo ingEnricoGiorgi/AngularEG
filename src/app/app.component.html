@@ -1,15 +1,86 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
-
+<!--
 <nav>
-  <!--
-  <a class="button" routerLink="ticket" routerLinkActive="activebutton" ariaCurrentWhenActive="page">All tickets</a> |
-  -->
-  <a class="button" routerLink="ticketRead" routerLinkActive="activebutton" ariaCurrentWhenActive="page">ticket read</a>
+  <a class="button" routerLink="product" routerLinkActive="activebutton" ariaCurrentWhenActive="page">eCommerce</a>
+  <a class="button" routerLink="ticket" routerLinkActive="activebutton" ariaCurrentWhenActive="page">tickets</a>
   <a class="button" routerLink="/" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Home</a>
 </nav>
+-->
+
+<!--bootstrap-->
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/" routerLinkActive="activelink" ariaCurrentWhenActive="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="activelink" ariaCurrentWhenActive="page" (click)="onClickProducts()">eCommerce</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="activelink" ariaCurrentWhenActive="page" (click)="onClickTicket()">tickets</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Background image
+  <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+      height: 400px;
+    ">
+-->
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3"> SHOW CONTENTS
+            <!--mostro ticket-->
+            <div id="comp-render" *ngIf="displayTicket">
+              <app-ticket></app-ticket>
+            </div>
+            <!--mostro ticket-->
+            <!--mostro ecommerce-->
+            <div id="comp-render" *ngIf="displayProducts">
+              <app-product></app-product>
+            </div>
+            <!--mostro ecommerce-->
+          </h1>
+
+          <!--
+            <a class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a
+          > -->
+        </div>
+      </div>
+    </div>
+ <!-- </div> -->
+  <!-- Background image -->
+</header>
+<!--bootstrap-->
+
 <router-outlet></router-outlet>
-<app-ticket></app-ticket>
+
+
+
+
+
 
 <!-- cosi ho aggiunto la tabella dappertutto -->
 
