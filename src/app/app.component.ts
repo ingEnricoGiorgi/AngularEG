@@ -8,14 +8,33 @@ import {CookieService} from 'ngx-cookie-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
-  public cookie_name='cart';
+  public cookie_name='cartcookie';
   public all_cookies:any='1';
 
+   //public numberProduct:number=0;
 
-constructor(private cookieService:CookieService) { }
+constructor(private cookieService:CookieService) {
+  var numberProduct;
+}
 
-  setCookie(){
-    this.cookieService.set('cartcookie','cartcookiecontenuto');
+
+    getCookie(cookien:string){
+      return this.cookieService.get(cookien);
+    }
+
+    setCookie(){
+    var myCookie = this.cookieService.get("cartcookie");
+
+    if (myCookie == null) {
+        // do cookie doesn't exist stuff;
+        this.numberProduct=0;
+    }
+    else {
+        // do cookie exists stuff
+        numberProduct += numberProduct;
+    }
+
+    this.cookieService.set('cartcookie', numberProduct.toString());
   }
 
   deleteCookie(){
