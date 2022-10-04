@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root2',
@@ -7,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
-  title = 'my-app';
+  public cookie_name='cart';
+  public all_cookies:any='1';
 
 
-constructor() { }
+constructor(private cookieService:CookieService) { }
 
+  setCookie(){
+    this.cookieService.set('cartcookie','cartcookiecontenuto');
+  }
+
+  deleteCookie(){
+    this.cookieService.delete('cartcookie');
+  }
+  deleteAll(){
+    this.cookieService.deleteAll();
+  }
 
   ngOnInit(): void {
-
+    this.cookie_name=this.cookieService.get('cartcookie');
+    this.all_cookies=this.cookieService.getAll();  // get all cookies object
 
   }
   displayTicket = false;
