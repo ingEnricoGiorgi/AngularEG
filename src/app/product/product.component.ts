@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
+import { Globals } from 'src/app/global';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +9,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductComponent implements OnInit {
   product: Product[] = [];
-  constructor() { }
+  constructor(private globals: Globals) { }
 //nginit
   ngOnInit(): void {
     this.product = [

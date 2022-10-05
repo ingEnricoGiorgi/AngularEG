@@ -8,6 +8,7 @@ import { TicketReadComponent } from './ticket-read/ticket-read.component';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import {CookieService} from 'ngx-cookie-service';
+import { Globals } from '../app/global';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {CookieService} from 'ngx-cookie-service';
      // {path: '', redirectTo: 'app', pathMatch: 'full'},
     ]),
   ],
-  providers: [CookieService],
+  providers: [CookieService,Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
+import { Globals } from 'src/app/global';
 
 @Component({
   selector: 'app-root2',
@@ -13,8 +14,8 @@ export class AppComponent  implements OnInit{
 
    //public numberProduct:number=0;
 
-constructor(private cookieService:CookieService) {
-  var numberProduct;
+constructor(private cookieService:CookieService, private globals: Globals) {
+
 }
 
 
@@ -25,16 +26,17 @@ constructor(private cookieService:CookieService) {
     setCookie(){
     var myCookie = this.cookieService.get("cartcookie");
 
-    if (myCookie == null) {
+    if (myCookie === null) {
         // do cookie doesn't exist stuff;
-        this.numberProduct=0;
+        this.globals.numberProduct=0;
     }
     else {
         // do cookie exists stuff
-        numberProduct += numberProduct;
+        //global.numberProduct += numberProduct;
+        this.globals.numberProduct+=1;
     }
 
-    this.cookieService.set('cartcookie', numberProduct.toString());
+    this.cookieService.set('cartcookie', this.globals.numberProduct.toString());
   }
 
   deleteCookie(){
