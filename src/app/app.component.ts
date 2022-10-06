@@ -25,17 +25,20 @@ constructor() {
 
   }
 
-
+  displayProducts = false;
   displayTicket = false;
   onClickTicket() {
+    this.displayProducts = false;
     //this.displayTicket = true;
     /*if you want the component to show and hide on click pressed, use
     use this line*/
     this.displayTicket = !this.displayTicket;
+
   }
 
-  displayProducts = false;
+
   onClickProducts() {
+    this.displayTicket = false;
     //this.displayProducts = true;
     /*if you want the component to show and hide on click pressed, use
     use this line*/
