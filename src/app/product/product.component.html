@@ -1,3 +1,26 @@
 <img src="https://offautan-uc1.azureedge.net/-/media/images/off/ph/products-en/products-landing/landing/off_kids_product_collections_large_2x.jpg?la=en-ph" alt="Girl in a jacket" width="500" height="600">
-<button type="button">ADD TO CART</button>
-<button type="button">HAI ELEMENTI SUL CARRELLO</button>
+<button type="button" (click)="setCookie()">ADD TO CART</button>
+<button type="button">HAI {{this.globals.numberProduct.toString()}} ELEMENTI SUL CARRELLO</button>
+<button type="button" (click)="deleteAll()">DISCARD</button>
+<div style="text-align: center, bold; color: white" >
+  <div *ngFor="let prod of product">
+    <span>Nome prodotto: {{prod.getproductName()}} Quantity left:  - <span>{{prod.getproductQuantity()}} - ID: {{prod.getproductId()}}
+  <div>
+
+<!--
+  <h5>Cookies In Angular</h5>
+  <h5>Cookie Data:</h5>
+  <p>Name: {{cookie_name}}</p>
+  <p>Cookie Object: {{all_cookies | json}}</p>
+  <br>
+  <button (click)="setCookie()">Set Cookies</button>
+  <br><br>
+  <button (click)="deleteCookie()">Delete</button>
+  <br><br>
+  <button (click)="deleteAll()">Delete All</button>
+  </div>
+-->
+
+
+
+

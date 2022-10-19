@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TicketComponent } from './ticket/ticket.component';
@@ -8,13 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TicketReadComponent } from './ticket-read/ticket-read.component';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
+import {CookieService} from 'ngx-cookie-service';
+import { Globals } from '../app/global';
 
 @NgModule({
   declarations: [
    AppComponent,
    TicketComponent,
    TicketReadComponent,
-   ProductComponent
+   ProductComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { ProductComponent } from './product/product.component';
      // {path: '', redirectTo: 'app', pathMatch: 'full'},
     ]),
   ],
-  providers: [],
+  providers: [CookieService,Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

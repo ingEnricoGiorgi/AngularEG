@@ -20,6 +20,6 @@ export class Product {
     }
 
     getproductId(): number {
-      return 12 * this.productId;
+      return this.productId;
     }
 }
